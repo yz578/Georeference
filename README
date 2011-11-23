@@ -1,1 +1,27 @@
 Georeference
+
+How to use make the Georeference
+1. Download the Lucene 3.4
+2. Create a new Java project in Eclipse
+3. Put the GeoIndexWriter.java, Georeference.java, and GeoreferenceTest.java in the package
+4. Add these jar files to the project's path
+	- lucene-core-3.4.0.jar
+	- lucene-misc-3.4.0.jar
+	- lucene-queries.3.4.0.jar
+	- lucene-spatial.3.4.0.jar
+5. Run the GeoreferenceTest.java as a test
+
+How to run the Georeference Java servlet
+1. Download the Tomcat Server
+2. Create a Dynamic Web Project
+3. Put the GeoIndexWriter.java, Georeference.java, and GeoreferenceServlet.java in the package
+4. Copy these jar files to the directory WebContent/WEB-INF/lib
+	- lucene-core-3.4.0.jar
+	- lucene-misc-3.4.0.jar
+	- lucene-queries.3.4.0.jar
+	- lucene-spatial.3.4.0.jar
+5. Add these jar files to the project's path
+6. Put web.xml in WebContent/WEB-INF
+7. In web.xml init params, pecify the locations of your data files and locations you want index files to be stored in
+8. Run the GeoreferenceServlet.java on the Tomcat server
+9. Run the WebClientTest.java as a test

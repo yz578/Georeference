@@ -1,0 +1,27 @@
+<web-app>
+    <servlet>
+        <servlet-name>Georeference</servlet-name>
+        <servlet-class>edu.cornell.georeference.GeoreferenceServlet</servlet-class>
+        
+        <init-param>
+            <param-name>modernGeoDataSource</param-name>
+            <param-value>C:/Users/Yang Yang/workspace3/GeoreferenceWeb/data/cities1000.txt</param-value>
+        </init-param>
+        <init-param>
+            <param-name>histGeoDataSource</param-name>
+            <param-value>C:/Users/Yang Yang/workspace3/GeoreferenceWeb/data/pleiades-names.txt</param-value>
+        </init-param>
+        <init-param>
+            <param-name>modernIndexDirectory</param-name>
+            <param-value>C:/Users/Yang Yang/workspace3/GeoreferenceWeb/index/geoname</param-value>
+        </init-param>
+        <init-param>
+            <param-name>histIndexDirectory</param-name>
+            <param-value>C:/Users/Yang Yang/workspace3/GeoreferenceWeb/index/histname</param-value>
+        </init-param> 
+    </servlet>
+    <servlet-mapping>
+ 		<servlet-name>Georeference</servlet-name>
+ 		<url-pattern>/geosearch</url-pattern>
+ 	</servlet-mapping>
+</web-app>

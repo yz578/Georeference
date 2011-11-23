@@ -1,4 +1,4 @@
-package georeference;
+package edu.cornell.georeference;
 
 import java.io.IOException;
 
@@ -15,16 +15,21 @@ public class GeoreferenceServlet extends HttpServlet {
 	Directory modernIndex;
 	Directory histIndex;
 	
-	public GeoreferenceServlet() throws IOException {
-		super();
-		GeoIndexWriter geoIndexWriter = new GeoIndexWriter();
-		modernIndex = geoIndexWriter.getGeonameDirectory(
-				"C:/Users/Yang Yang/workspace/GeoreferenceWeb2/data/cities1000.txt",
-				"C:/Users/Yang Yang/workspace/GeoreferenceWeb2/index/geoname");
-		histIndex = geoIndexWriter.getHistnameDirectory(
-				"C:/Users/Yang Yang/workspace/GeoreferenceWeb2/data/pleiades-names.txt",
-				"C:/Users/Yang Yang/workspace/GeoreferenceWeb2/index/histname");
-		System.out.println("Finish getting indices");
+	public void init() {
+		// Get the value of an initialization parameter
+	    String modernGeoDataSource = getServletConfig().getInitParameter("modernGeoDataSource");
+		String histGeoDataSource = getServletConfig().getInitParameter("histGeoDataSource");
+		String modernIndexDirectory = getServletConfig().getInitParameter("modernIndexDirectory");
+		String histIndexDirectory = getServletConfig().getInitParameter("histIndexDirectory");
+		
+		try {
+			GeoIndexWriter geoIndexWriter = new GeoIndexWriter();
+			modernIndex = geoIndexWriter.getGeonameDirectory(modernGeoDataSource, modernIndexDirectory);
+			histIndex = geoIndexWriter.getHistnameDirectory(histGeoDataSource, histIndexDirectory);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -37,7 +42,7 @@ public class GeoreferenceServlet extends HttpServlet {
 			placeName = placeName.toLowerCase();
 		}
 		
-		Georeference geo = new Georeference();
+		Georeference geo = new Georeference(false);
 		String places = geo.searchLocation(modernIndex, histIndex, placeName, bound, nearbyPlaces);
 		
 		resp.getWriter().print(places);

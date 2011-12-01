@@ -1,6 +1,10 @@
 <?php require_once "header.php"; ?>
 
 <?php
+
+// Change this url to the url of the web service
+$baseURL = "http://localhost:8080/GeoreferenceWeb/geosearch";
+
 $bound = "";
 if (isset($_GET['boundPoint1Lat']) && isset($_GET['boundPoint1Lng']) && isset($_GET['boundPoint2Lat']) && isset($_GET['boundPoint2Lng'])) {
 	if ($_GET['boundPoint1Lat'] != "" && $_GET['boundPoint1Lng'] != "" && $_GET['boundPoint2Lat'] != "" && $_GET['boundPoint2Lng'] != "") {
@@ -23,7 +27,9 @@ if (isset($_GET['nearbyPointCount'])) {
 		}
 	}
 }
-$url = "http://localhost:8080/GeoreferenceWeb/geosearch?placeName=$_GET[placeName]&bound=$bound&nearbyPlaces=$nearbyPlaces";
+
+$url = $baseURL . "?placeName=$_GET[placeName]&bound=$bound&nearbyPlaces=$nearbyPlaces";
+
 //echo $url;
 $response = file_get_contents($url);
 

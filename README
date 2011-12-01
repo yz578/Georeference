@@ -25,3 +25,7 @@ How to run the Georeference Java servlet
 7. In web.xml init params, pecify the locations of your data files and locations you want index files to be stored in
 8. Run the GeoreferenceServlet.java on the Tomcat server
 9. Run the WebClientTest.java as a test
+
+How to run the webpage
+1. Change the url in webpage/geosearch.php to the url you used for the web service
+2. Put all files in webpage folder into the web server that support php

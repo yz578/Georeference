@@ -10,7 +10,7 @@ http://www.screencast.com/t/v6imqEccYh
 
 Where to download open data dumps:
 Geonames: http://www.geonames.org/
-Pleiades: http://thedatahub.org/dataset/pleiades
+Pleiades: http://thedatahub.org/dataset/pleiades (convert the excel file to a tab delimited file)
 
 How to use run the Georeference as a normal program:
 1. Download the Lucene 3.4 from http://www.carfab.com/apachesoftware//lucene/java/3.4.0/

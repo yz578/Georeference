@@ -8,6 +8,10 @@ code as a library or you can just run the servlet or website to use it as a serv
 Here is a demo/screencast that shows around a website that uses this service: 
 http://www.screencast.com/t/v6imqEccYh
 
+Where to download open data dumps:
+Geonames: http://www.geonames.org/
+Pleiades: http://thedatahub.org/dataset/pleiades
+
 How to use make the Georeference as a library:
 1. Download the Lucene 3.4 from http://www.carfab.com/apachesoftware//lucene/java/3.4.0/
 2. Create a new Java project in Eclipse (download eclipse from http://www.eclipse.org/downloads/)

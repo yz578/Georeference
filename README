@@ -1,20 +1,25 @@
 Georeference
 
-How to use make the Georeference
-1. Download the Lucene 3.4
-2. Create a new Java project in Eclipse
-3. Put the GeoIndexWriter.java, Georeference.java, and GeoreferenceTest.java in the package
+Description:
+This program allows you to search for location names (modern or historical locations) with
+contextual data in order to find their latitude-longitude coordinates. You can use the 
+code as a library or you can just run the servlet or website to use it as a service.
+
+How to use make the Georeference as a library:
+1. Download the Lucene 3.4 from http://www.carfab.com/apachesoftware//lucene/java/3.4.0/
+2. Create a new Java project in Eclipse (download eclipse from http://www.eclipse.org/downloads/)
+3. Put all java files in the code folder except GeoreferenceServlet.java and WebClientTest.java into the package (you probably need to rename you package)
 4. Add these jar files to the project's path
 	- lucene-core-3.4.0.jar
 	- lucene-misc-3.4.0.jar
 	- lucene-queries.3.4.0.jar
 	- lucene-spatial.3.4.0.jar
-5. Run the GeoreferenceTest.java as a test
+5. Run the GeoreferenceTest.java as a test to make sure everything works
 
-How to run the Georeference Java servlet
-1. Download the Tomcat Server
-2. Create a Dynamic Web Project
-3. Put the GeoIndexWriter.java, Georeference.java, and GeoreferenceServlet.java in the package
+How to run the Georeference Java servlet:
+1. Download the Tomcat Server if you don't have one
+2. Create a Dynamic Web Project in Eclipse EE (download eclipse ee from http://www.eclipse.org/downloads/)
+3. Put all java files in the code folder into the package (you probably need to rename you package)
 4. Copy these jar files to the directory WebContent/WEB-INF/lib
 	- lucene-core-3.4.0.jar
 	- lucene-misc-3.4.0.jar
@@ -22,10 +27,14 @@ How to run the Georeference Java servlet
 	- lucene-spatial.3.4.0.jar
 5. Add these jar files to the project's path
 6. Put web.xml in WebContent/WEB-INF
-7. In web.xml init params, pecify the locations of your data files and locations you want index files to be stored in
+7. In web.xml init params, specify the paths of your data dump files and paths you want index files to be stored in
 8. Run the GeoreferenceServlet.java on the Tomcat server
-9. Run the WebClientTest.java as a test
+9. Run the WebClientTest.java as a test to make sure everything works
 
-How to run the webpage
-1. Change the url in webpage/geosearch.php to the url you used for the web service
-2. Put all files in webpage folder into the web server that support php
+How to run the webpage:
+1. Download WAMP (from http://www.wampserver.com/en/) if you don't have a web server
+2. Change the baseURL variable in geosearch.php and nearbyplaces.php to the url you used for the web service
+3. Put all files in website folder into WAMP or any other web server that supports php
+
+Here is a demo/screencast that shows around a website that uses this service: 
+http://www.screencast.com/t/v6imqEccYh

@@ -5,6 +5,9 @@ This program allows you to search for location names (modern or historical locat
 contextual data in order to find their latitude-longitude coordinates. You can use the 
 code as a library or you can just run the servlet or website to use it as a service.
 
+Here is a demo/screencast that shows around a website that uses this service: 
+http://www.screencast.com/t/v6imqEccYh
+
 How to use make the Georeference as a library:
 1. Download the Lucene 3.4 from http://www.carfab.com/apachesoftware//lucene/java/3.4.0/
 2. Create a new Java project in Eclipse (download eclipse from http://www.eclipse.org/downloads/)
@@ -35,6 +38,3 @@ How to run the webpage:
 1. Download WAMP (from http://www.wampserver.com/en/) if you don't have a web server
 2. Change the baseURL variable in geosearch.php and nearbyplaces.php to the url you used for the web service
 3. Put all files in website folder into WAMP or any other web server that supports php
-
-Here is a demo/screencast that shows around a website that uses this service: 
-http://www.screencast.com/t/v6imqEccYh

@@ -1,28 +1,29 @@
 body 
 { 
- margin: 0; 
- padding: 0; 
- text-align: center; 
+	margin: 0; 
+	padding: 0; 
+	text-align: center; 
 } 
+
 #wrapper 
 { 
- margin: 0 auto; 
- padding: 0; 
- width: 720px; 
- text-align: left; 
+	margin: 0 auto; 
+	padding: 0; 
+	width: 720px; 
+	text-align: left; 
 } 
 
 #titleImage
 {
-display: block;
-margin-left: auto;
-margin-right: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .pointField 
 {
-width:50px;
-font-size:14px;
+	width:50px;
+	font-size:14px;
 }
 
 /*
@@ -38,11 +39,11 @@ Table style source: http://coding.smashingmagazine.com/2008/08/13/top-10-css-tab
 	width: 600px;
 	border-collapse: collapse;
 	text-align: left;
-	
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
+
 #resultTable th
 {
 	font-size: 14px;
@@ -51,22 +52,52 @@ Table style source: http://coding.smashingmagazine.com/2008/08/13/top-10-css-tab
 	padding: 10px 8px;
 	border-bottom: 2px solid #6678b1;
 }
+
 #resultTable td
 {
 	color: #669;
 	padding: 9px 8px 0px 8px;
 }
+
 #resultTable tbody tr:hover td
 {
 	color: #009;
 }
 
-#backLink
+#buttonTable
 {
-text-align: center;
-display: block;
-margin-left: auto;
-margin-right: auto;
+	width: 100%;
+}
+
+#buttonTable td
+{
+	text-align: center;
+}
+
+.nearbyLink:link
+{
+	text-decoration: none
+}
+
+.nearbyLink:visited 
+{
+	text-decoration: none
+}
+
+.nearbyLink:active
+{
+	text-decoration: none
+}
+
+.nearbyLink:hover
+{
+	text-decoration: underline
+}
+
+#resultListLabel
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 16px;
 }
 
 /*
@@ -75,23 +106,23 @@ Button source: http://www.pagetutor.com/button_designer/index.html
 
 .groovybutton
 {
-   font-size:12px;
-   font-family:Verdana,sans-serif;
-   color:#888888;
-   width:100px;
-   height:25px;
-   background-color:#EEEEEE;
-   border-style:solid;
-   border-color:#BBBBBB;
-   border-width:1px;
+	font-size:12px;
+	font-family:Verdana,sans-serif;
+	color:#888888;
+	width:100px;
+	height:25px;
+	background-color:#EEEEEE;
+	border-style:solid;
+	border-color:#BBBBBB;
+	border-width:1px;
 }
 
 #searchButton
 {
-text-align: center;
-display: block;
-margin-left: auto;
-margin-right: auto;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .deletePointButton

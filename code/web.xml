@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <web-app>
     <servlet>
         <servlet-name>Georeference</servlet-name>
@@ -5,7 +6,7 @@
         
         <init-param>
             <param-name>modernGeoDataSource</param-name>
-            <param-value>C:/Users/Yang Yang/workspace3/GeoreferenceWeb/data/cities1000.txt</param-value>
+            <param-value>C:/Users/Yang Yang/workspace3/GeoreferenceWeb/data/allCountries.txt</param-value>
         </init-param>
         <init-param>
             <param-name>histGeoDataSource</param-name>
@@ -13,7 +14,7 @@
         </init-param>
         <init-param>
             <param-name>modernIndexDirectory</param-name>
-            <param-value>C:/Users/Yang Yang/workspace3/GeoreferenceWeb/index/geoname</param-value>
+            <param-value>C:/Users/Yang Yang/workspace3/GeoreferenceWeb/index/modname</param-value>
         </init-param>
         <init-param>
             <param-name>histIndexDirectory</param-name>

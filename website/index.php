@@ -2,6 +2,9 @@
 
 
 <script type="text/javascript" defer ="defer">
+
+// Allow the user to add nearby points to the form
+
 var nearbyPointCount = 0;
 
 function addNearbyPoint() {
@@ -29,7 +32,7 @@ function addNearbyPoint() {
 	newName = 'nearbyPoint' + nearbyPointCount + 'Rng';
 	var cell4 = row.insertCell(3);
 	cell4.width = 150;
-	cell4.innerHTML = 'Range: <input name=\"' + newName + '\" id=\"' + newName + '\" class=\"pointField\" type =\"text\" />';
+	cell4.innerHTML = 'Range (mile): <input name=\"' + newName + '\" id=\"' + newName + '\" class=\"pointField\" type =\"text\" />';
 	
 	newName = 'delete' + nearbyPointCount;
 	var cell5 = row.insertCell(4);
@@ -52,16 +55,16 @@ function deleteNearbyPoint(pointNumber) {
 	}
 }
 
+
+// Check to make sure the values in the form are legal
 function checkForm() {
 	
 	var placeName = document.getElementById("placeName");
 	
-	//check to see if one of fields are empty
 	if (placeName.value == ""){
 		alert ("Please enter the name of the location.");
 		return false;
 	}
-	
 		
 	var decimalRegExp = new RegExp(/^[-+]?[0-9]+(\.[0-9]+)?$/);
 	
@@ -80,7 +83,6 @@ function checkForm() {
 		return false;
 	}
 	
-		
 	var badNearbyPoints = false;
 	for(var i = 0; i < nearbyPointCount; i++) {
 		
@@ -88,8 +90,6 @@ function checkForm() {
 		var lat = document.getElementById(baseID + 'Lat');
 		var lng = document.getElementById(baseID + 'Lng');
 		var rng = document.getElementById(baseID + 'Rng');
-		
-		
 		
 		var nt1 = lat != null && lat.value != "" && !decimalRegExp.test(lat.value);
 		var nt2 = lng != null && lng.value != "" && !decimalRegExp.test(lng.value);
@@ -108,19 +108,6 @@ function checkForm() {
 	
 }
 
-function goLite(FRM,BTN)
-{
-   window.document.forms[FRM].elements[BTN].style.color = "#6666AA";
-   window.document.forms[FRM].elements[BTN].style.backgroundColor = "#EEEEF4";
-   window.document.forms[FRM].elements[BTN].style.borderColor = "#9999DD";
-}
-
-function goDim(FRM,BTN)
-{
-   window.document.forms[FRM].elements[BTN].style.color = "#888888";
-   window.document.forms[FRM].elements[BTN].style.backgroundColor = "#EEEEEE";
-   window.document.forms[FRM].elements[BTN].style.borderColor = "#BBBBBB";
-}
 </script>
 
 <br /><br />
@@ -170,7 +157,12 @@ Longtidue: <input name="boundPoint2Lng" id="boundPoint2Lng" class="pointField" t
 	onclick="addNearbyPoint();" 
 	onMouseOver="goLite(this.form.name,this.name)"
 	onMouseOut="goDim(this.form.name,this.name)" />
-
+<br />
+<br />
+<div class="formBigLabel">Search Through</div>
+<input type="radio" name="searchOption" value="modern">Modern Locations<br>
+<input type="radio" name="searchOption" value="historical">Historical Locations<br>
+<input type="radio" name="searchOption" value="both" checked>Both<br>
 <br />
 <br />
 <input type ="submit" id="searchButton" name="searchButton" class="groovybutton" value ="Search" 
